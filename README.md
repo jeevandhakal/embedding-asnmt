@@ -55,3 +55,18 @@ Overlapping classmates:
 Overall, the high Spearman rho and strong overlap show that the rankings are mostly stable.  
 Changing the embedding model causes only small differences.  
 This means the system is not highly sensitive to model choice.
+
+## Data Analysis
+
+To test embedding sensitivity to semantic changes, I modified three classmate descriptions:
+1. **Miguel Palafox**: Changed "enjoy" and other positive verbs to "detest" (Major semantic inversion).
+2. **Nikita Neveditsin**: Added a distinct clause about "avoiding my family at all costs" (Context addition).
+3. **Jeevan Dhakal**: Rephrased existing hobbies, e.g., changing "watching movies" to "viewing films" (Phrasing change).
+
+**Impact Analysis:**
+The results showed varying degrees of impact on the embeddings:
+*   **Miguel Palafox** experienced a large drop in cosine similarity (**0.548**). This drastic change confirms that the model effectively captured the complete inversion of sentiment from positive to negative.
+*   **Nikita Neveditsin** showed a moderate drop (**0.836**), reflecting the introduction of completely new information while maintaining the original context.
+*   **Jeevan Dhakal** retained a relatively high similarity (**0.862**). Even though the specific words changed, the semantic proximity of terms like "films" vs "movies" kept the vector close to the original.
+
+These results suggest that the embeddings are robust to widely varying phrasing but are appropriately sensitive to strong sentiment inversions and the injection of new context.
