@@ -55,3 +55,9 @@ Overlapping classmates:
 Overall, the high Spearman rho and strong overlap show that the rankings are mostly stable.  
 Changing the embedding model causes only small differences.  
 This means the system is not highly sensitive to model choice.
+
+**How to run the program?**
+
+```bash
+python model_comparison.py --emb1 embeddings_minilm.json --emb2 embeddings_mpnet.json --me "Zilong Wang"
+```
